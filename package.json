@@ -1,0 +1,11 @@
+{
+  "name": "promptforge",
+  "version": "0.2.0-phase2",
+  "private": true,
+  "scripts": {
+    "test": "node tests/phase1.test.js && node tests/phase2.test.js"
+  },
+  "devDependencies": {
+    "jsdom": "^26.0.0"
+  }
+}

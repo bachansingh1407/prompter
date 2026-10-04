@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="PromptForge turns rough requirements into implementation-ready AI prompts." />
+  <title>PromptForge — AI Prompt Engineering Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark"><span></span><span></span><span></span></div>
+        <span>PromptForge</span>
+      </div>
+
+      <nav class="nav" aria-label="Primary navigation">
+        <button class="nav-item active" data-route="generator">
+          <span class="nav-icon">✦</span><span>Prompt Flow</span>
+        </button>
+        <button class="nav-item" data-route="review">
+          <span class="nav-icon">◎</span><span>Spec Review</span>
+        </button>
+        <button class="nav-item" data-route="history">
+          <span class="nav-icon">◷</span><span>History</span>
+        </button>
+        <button class="nav-item" data-route="templates">
+          <span class="nav-icon">▤</span><span>Templates</span>
+        </button>
+        <button class="nav-item" data-route="settings">
+          <span class="nav-icon">⚙</span><span>Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="connection-card">
+          <div class="connection-top">
+            <span class="groq-dot" id="sidebarStatusDot"></span>
+            <span>Groq</span>
+          </div>
+          <span class="connection-status" id="sidebarStatus">Not connected</span>
+        </div>
+        <div class="sidebar-note">v0.02 phase 2 · Prototype · browser-only API key</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="mobile-header">
+        <button class="icon-btn" id="mobileMenuBtn" data-action="open-nav" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false">☰</button>
+        <div class="brand compact"><div class="brand-mark"><span></span><span></span><span></span></div>PromptForge</div>
+        <button class="icon-btn" data-route="settings" aria-label="Settings">⚙</button>
+      </header>
+
+      <div class="page" id="page"></div>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay" data-action="close-nav"></div>
+  <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+  <script src="js/util.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/groq.js"></script>
+  <script src="js/clarify.js"></script>
+  <script src="js/review.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
